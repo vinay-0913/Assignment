@@ -21,9 +21,11 @@ def get_users():
     page = request.args.get("page", None, type=int)
     limit = request.args.get("limit", 10, type=int)
 
-    result = UserService.get_all_users(page=page, limit=limit, search=search)
-
-    return jsonify({"success": True, "data": result}), 200
+    try:
+        result = UserService.get_all_users(page=page, limit=limit, search=search)
+        return jsonify({"success": True, "data": result}), 200
+    except ValueError as e:
+        return jsonify({"success": False, "error": str(e)}), 404
 
 
 @user_bp.route("/users/<int:user_id>", methods=["GET"])

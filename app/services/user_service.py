@@ -39,6 +39,8 @@ class UserService:
             pagination = query.order_by(User.id).paginate(
                 page=page, per_page=limit, error_out=False
             )
+            if search and not pagination.items:
+                raise ValueError("User not found")
             return {
                 "users": [u.to_dict() for u in pagination.items],
                 "pagination": {
@@ -52,6 +54,8 @@ class UserService:
             }
 
         users = query.order_by(User.id).all()
+        if search and not users:
+            raise ValueError("User not found")
         return {"users": [u.to_dict() for u in users]}
 
     @staticmethod

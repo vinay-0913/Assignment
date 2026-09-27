@@ -16,7 +16,7 @@ def register():
 
     try:
         result = AuthService.register(
-            username=data.get("username"),
+            username=data.get("email"),
             password=data.get("password"),
         )
         return jsonify({"success": True, "data": result}), 201
@@ -33,7 +33,7 @@ def login():
 
     try:
         result = AuthService.login(
-            username=data.get("username"),
+            username=data.get("email"),
             password=data.get("password"),
         )
         return jsonify({"success": True, "data": result}), 200
