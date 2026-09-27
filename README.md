@@ -345,4 +345,4 @@ Flask was chosen because it is lightweight, flexible, and ideal for building sma
 
 - **AI Tools Used**: Google Gemini (Antigravity IDE) was used as a coding assistant during development.
 - **AI-Generated Parts**: The initial project scaffolding, boilerplate code structure, README documentation, and code comments were generated with AI assistance.
-- **Manual Modifications**: All business logic was reviewed and validated manually. Database schema design decisions, error handling strategy, and API response format were directed by human judgment. The `.env` configuration, Git workflow, and deployment considerations were set up manually.
+- **Manual Modifications**: All business logic was reviewed and validated manually. Database setup, Database schema design decisions, error handling strategy, and API response format were directed by human judgment. The `.env` configuration, Git workflow, and deployment considerations were set up manually.
